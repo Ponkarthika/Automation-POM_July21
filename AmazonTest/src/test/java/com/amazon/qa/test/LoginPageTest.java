@@ -1,9 +1,8 @@
 package com.amazon.qa.test;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.amazon.qa.base.TestBase;
@@ -13,11 +12,12 @@ import com.amazon.qa.pages.LoginPage;
 public class LoginPageTest extends TestBase {
 LoginPage loginpage;
 HomePage homePage;
+
 	public LoginPageTest() {
 		super();
 	}
 	
-	@BeforeMethod
+	@BeforeClass
 	public void setup() {
 		initialization();
 		loginpage = new LoginPage();
@@ -36,7 +36,7 @@ HomePage homePage;
 		
 		
 	
-	@AfterMethod
+	@AfterClass
 	public void teardown() {
 		driver.quit();
 	}

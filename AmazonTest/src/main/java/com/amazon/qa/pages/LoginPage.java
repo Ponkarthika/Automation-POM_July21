@@ -26,18 +26,29 @@ WebElement signInButton;
 public LoginPage() {
 	PageFactory.initElements(driver, this);
 }
-public LoginPage clickOnSigninbutton()
+
+//actions
+/*public LoginPage clickOnSigninbutton()
 {
 	loginButton.click();
 	return new LoginPage();
 	
+}*/
+
+public void clickOnSigninbutton()
+{
+	loginButton.click();
+	//return new LoginPage();
+	
 }
+
 
 
 public String validateLoginPagetitle() {
 	return driver.getTitle();
 }
 
+//this method is returning homepage
 public HomePage login(String un, String pwd) {
 	loginButton.click();
 	emailorMobileNumber.sendKeys(un);

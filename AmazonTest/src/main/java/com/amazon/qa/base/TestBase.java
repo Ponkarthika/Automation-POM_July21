@@ -22,8 +22,8 @@ public class TestBase {
 	public TestBase() {
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream("/Users/ponkarthika/eclipse-workspace/AmazonTest"
-					+ "/src/main/java/com/amazon/qa/config/config.properties");
+			FileInputStream ip = new FileInputStream("/Users/ponkarthika/git/Automation-POM_July21/AmazonTest/"
+					+ "src/main/java/com/amazon/qa/config");
 			prop.load(ip);
 		}
 		catch(FileNotFoundException e) {
@@ -37,7 +37,7 @@ public class TestBase {
 //global variable driver also initialized
 	public static void initialization() {
 		String browserName = prop.getProperty("browser");
-		if(browserName.equals("chrome")) {
+		if(browserName.equals("chrome") ) {
 			System.setProperty("webdriver.chrome.driver", "//Users//ponkarthika//Downloads//chromedriver");
 			ChromeOptions options= new ChromeOptions();
 			options.setExperimentalOption("excludeSwitches", new String[] {"enable-automation"});
