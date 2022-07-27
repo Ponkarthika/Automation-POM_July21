@@ -5,6 +5,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.amazon.qa.base.TestBase;
+import com.amazon.qa.pages.CheckOutPage;
 import com.amazon.qa.pages.HomePage;
 import com.amazon.qa.pages.LoginPage;
 import com.amazon.qa.util.TestUtil;
@@ -29,16 +30,17 @@ public class CheckOutPageTest extends TestBase{
 	}
 		
 	@DataProvider
-	public void getAmazonTestData() {
-		TestUtil.getTestData(sheetName);
+	public Object[][] getAmazonTestData() {
+		Object data[][]=TestUtil.getTestData(sheetName);
+		return data;
 		
 	}
 	
 	
-		
-	
-    @Test
-    public void enterCheckoutAddress() {
+    @Test(dataProvider ="getAmazonTestData")
+    public void enterCheckoutAddress(String firstName, String address) {
+    	CheckOutPage.enterCheckOutAddress(firstName,address);
+    	
     	
     }
 }
